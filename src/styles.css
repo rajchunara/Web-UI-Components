@@ -4,8 +4,13 @@ body {
 }
 
 .App {
-  font-family: sans-serif;
+  font-family: poppins;
   text-align: center;
   display: flex;
   justify-content: center;
+}
+
+.close-btn {
+  height: 40px;
+  background-color: coral;
 }

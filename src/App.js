@@ -1,13 +1,12 @@
 import React from "react";
 import "./styles.css";
-import GlassMorphism from "./UI-Components/GlassMorphism";
-
+import HomeContainer from "./Home";
 // UI Components
 
 export default function App() {
   return (
     <div className="App">
-      <GlassMorphism></GlassMorphism>
+      <HomeContainer></HomeContainer>
     </div>
   );
 }

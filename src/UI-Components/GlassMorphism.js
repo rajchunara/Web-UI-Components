@@ -86,15 +86,15 @@ const Circle2 = styled(Circle1)`
   left: 60%;
 `;
 
-const Square = styled.div`
-  position: absolute;
-  top: 150px;
-  left: 50px;
+// const Square = styled.div`
+//   position: absolute;
+//   top: 150px;
+//   left: 50px;
 
-  width: 200px;
-  height: 200px;
-  background-color: darkcyan;
-`;
+//   width: 200px;
+//   height: 200px;
+//   background-color: darkcyan;
+// `;
 
 export default function GlassMorphism() {
   return (
