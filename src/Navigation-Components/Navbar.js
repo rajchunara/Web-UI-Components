@@ -22,6 +22,7 @@ export const StyledNavBar = styled(Navbar)`
   }
 `;
 
+//Close Button
 export function CloseButton(props) {
   const CloseBtn = styled.div`
     display: none;

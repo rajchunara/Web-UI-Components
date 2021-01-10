@@ -1,13 +1,25 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { BrowserRouter as Router } from "react-router-dom";
 
-import { CloseButton, StyledNavBar } from "./Navbar";
+import { CloseButton, StyledNavBar } from "./Navigation-Components/Navbar";
 
+import NavbarItems from "./Navigation-Components/NavbarItems";
+import RouteComponents from "./Navigation-Components/RouteComonents";
+
+//Styled Components
 const HomeContainer = styled.div`
   background-color: #ededed;
   width: 100vw;
   height: 100vh;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (min-width: 850px) {
+    padding-left: 300px;
+  }
 `;
 
 const LogoTitleH2 = styled.h2`
@@ -20,21 +32,25 @@ const LogoTitleH2 = styled.h2`
   }
 `;
 
+// Main Functional Component
 export default function HomeComponent() {
   const [navbarStatus, setNavbarStatus] = useState(true);
 
+  //Styled Burger Icon
   const BurgerContainer = styled.div`
     margin-top: 20px;
     width: 100px;
     height: 20px;
     display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
     @media screen and (max-width: 850px) {
       display: flex;
       justify-content: space-evenly;
       align-items: center;
       flex-direction: column;
     }
-
     :hover {
       cursor: pointer;
     }
@@ -47,25 +63,36 @@ export default function HomeComponent() {
     border-radius: 3px;
   `;
 
+  //Toggle Nabar function
   const toggleNavbar = () => {
-    console.log(navbarStatus);
     setNavbarStatus(!navbarStatus);
   };
 
   return (
-    <HomeContainer>
-      <BurgerContainer onClick={toggleNavbar}>
-        <BurgerLine></BurgerLine>
-        <BurgerLine></BurgerLine>
-      </BurgerContainer>
-      <StyledNavBar showNavbar={navbarStatus}>
-        <CloseButton clickFn={toggleNavbar}>
-          <h2>x</h2>
-        </CloseButton>
-        <div className="logo-container">
-          <LogoTitleH2>UI Components</LogoTitleH2>
-        </div>
-      </StyledNavBar>
-    </HomeContainer>
+    <Router>
+      <HomeContainer>
+        {/* Burger Icon */}
+        <BurgerContainer onClick={toggleNavbar}>
+          <BurgerLine></BurgerLine>
+          <BurgerLine></BurgerLine>
+        </BurgerContainer>
+
+        {/* Responsive Navbar */}
+        <StyledNavBar showNavbar={navbarStatus}>
+          <CloseButton clickFn={toggleNavbar}>
+            <h2>x</h2>
+          </CloseButton>
+          <div className="logo-container">
+            <LogoTitleH2>UI Components</LogoTitleH2>
+          </div>
+
+          {/* Routing Links*/}
+          <NavbarItems></NavbarItems>
+        </StyledNavBar>
+
+        {/* Routed Components */}
+        <RouteComponents></RouteComponents>
+      </HomeContainer>
+    </Router>
   );
 }
