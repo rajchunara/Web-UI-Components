@@ -9,8 +9,3 @@ body {
   display: flex;
   justify-content: center;
 }
-
-.close-btn {
-  height: 40px;
-  background-color: coral;
-}

@@ -9,7 +9,7 @@ import RouteComponents from "./Navigation-Components/RouteComonents";
 
 //Styled Components
 const HomeContainer = styled.div`
-  background-color: #ededed;
+  background-color: #282c34;
   width: 100vw;
   height: 100vh;
   position: relative;
@@ -57,10 +57,11 @@ export default function HomeComponent() {
   `;
 
   const BurgerLine = styled.div`
-    width: 25px;
+    width: 30px;
     height: 4px;
-    background-color: #21252b;
-    border-radius: 3px;
+    /* background-color: #21252b; */
+    background-color: whitesmoke;
+    border-radius: 2px;
   `;
 
   //Toggle Nabar function
